@@ -11,9 +11,23 @@ public class findDigit {
         }
         return count;
     }
+    //Using Recursion
+    public static int findDigitUsingRecursion(int y)
+    {
+        int result = 0;
+        if(y<=0)
+        {
+            return 0;
+        }
+
+             result = 1 + findDigitUsingRecursion(y/10);
+
+        return result;
+    }
     public static void main(String[] args) {
-        int x = 235;
-        int res = findDigit(x);
+        int x = 2359;
+//        int res = findDigit(x);
+        int res = findDigitUsingRecursion(x);
         System.out.println(res);
     }
 }
