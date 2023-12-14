@@ -1,4 +1,11 @@
 package LinkedList;
+class LinkImple implements LinkInterface
+{
+    public void display()
+    {
+        System.out.println("This is Infter");
+    }
+}
 class Node{
     int data;
     Node next;
@@ -57,6 +64,45 @@ public class LinkedListStriver {
         }
         return 0;
     }
+    private static Node removeHead(Node head)
+    {
+        if(head == null)
+        {
+            return head;
+        }
+        Node temp = head;
+        head = head.next;
+        return head;
+    }
+
+    private static Node removeLastNode(Node head)
+    {
+        if(head == null || head.next == null)
+        {
+            return  null;
+        }
+        Node temp = head;
+        while (temp.next.next != null)
+        {
+           temp = temp.next;
+        }
+        temp.next = null;
+        return head;
+    }
+//    private static Node removeK(Node head,int k)
+//    {
+//        if(head == null)
+//        {
+//            return head;
+//        }
+//        if(k==1)
+//        {
+//            int count =0;
+//            head = head.next;
+//            return head;
+//        }
+//
+//    }
     public static void main(String[] args) {
         int[] arr ={29,3,12,53,56};
         //Node y = new Node(arr[3]);
@@ -76,5 +122,11 @@ public class LinkedListStriver {
         else {
             System.out.println("No, Number doesn't present !");
         }
+
+        Node reviseNode = removeHead(head);
+        traverseLL(reviseNode);
+        System.out.println();
+        Node reviseNodeAtLast = removeLastNode(head);
+        traverseLL(reviseNodeAtLast);
     }
 }
