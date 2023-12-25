@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class GFGInsertInFixedArray {
     static int insertElement(int[] arr, int n, int x, int pos, int cap)
     {
-        for (int i = 0; i < arr.length-1; i++) {
+        for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i]+" ");
         }
         System.out.println(" ");
@@ -18,9 +18,10 @@ public class GFGInsertInFixedArray {
              arr[i+1]=arr[i];
         }
         arr[index] = x;
-        for (int i = 0; i <arr.length-1 ; i++) {
+        for (int i = 0; i <arr.length ; i++) {
             System.out.print(arr[i] +" ");
         }
+        System.out.println();
         return n+1;
     }
     public static void main(String[] args) {
