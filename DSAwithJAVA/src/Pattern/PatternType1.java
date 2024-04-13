@@ -217,7 +217,58 @@ public static void pattern16(int n)
     }
 
 }
+public static void pattern17(int n)
+{
+    for (int i = 1; i <=n; i++) {
+        char ch = 'A';
 
+        for (int j = 1; j <= i; j++) {
+            char val = (char) (ch+(n-1));
+            System.out.print(val+" ");
+            ch--;
+        }
+        System.out.println();
+    }
+}
+public static void pattern18(int n)
+{
+    int inSpace = 0;
+    for (int i = 1; i <=n ; i++) {
+        //star
+        for (int j = 1; j <=n-i ; j++) {
+            System.out.print("*");
+        }
+        //space
+        for (int j = 0; j <inSpace ; j++) {
+            System.out.print(" ");
+        }
+        //star
+        for (int j = 1; j <=n-i ; j++) {
+            System.out.print("*");
+        }
+        System.out.println();
+        inSpace +=2;
+
+    }
+    int inSpace2 = n;
+    for (int i = 1; i <n ; i++) {
+        //star
+        for (int j = 1; j <=i ; j++) {
+            System.out.print("*");
+        }
+        //space
+        for (int j = 0; j <inSpace ; j++) {
+            System.out.print(" ");
+        }
+        //star
+        for (int j = 1; j <=i ; j++) {
+            System.out.print("*");
+        }
+        System.out.println();
+        inSpace -=2;
+
+    }
+}
 
     public static void main(String[] args) {
         PatternType1 type1 = new PatternType1();
@@ -237,6 +288,8 @@ public static void pattern16(int n)
         //pattern14(3);
         //pattern15(3);
         //pattern16(3);
+        //pattern17(3);
+        pattern18(5);
 
     }
 }
