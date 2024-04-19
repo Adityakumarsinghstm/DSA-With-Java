@@ -15,7 +15,7 @@ public class FactorialNumbersNotGreaterThanN {
     public static List<Long> factorialNumbers(long n){
         ArrayList<Long> ans = new ArrayList<>();
         int p=1;
-        while (findFactorial(p)<n)
+        while (findFactorial(p)<=n)
         {
             ans.add((long)findFactorial(p));
             p++;
@@ -23,7 +23,7 @@ public class FactorialNumbersNotGreaterThanN {
         return ans;
     }
     public static void main(String[] args) {
-       List<Long> ans = factorialNumbers(7);
+       List<Long> ans = factorialNumbers(2);
         for (long n:ans ) {
             System.out.println(n);
         }
